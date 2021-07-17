@@ -29,6 +29,8 @@ int main(void){
         }else{
             cout << "The given strings are not Anagrams" << endl;
         }
+    }else{
+        cout << "The given strings are not Anagrams" << endl;
     }  
 }
 
