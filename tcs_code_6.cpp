@@ -31,15 +31,14 @@ Output Values
 23.0 INR */
 
 #include <bits/stdc++.h>
-#include <string>
 
 using namespace std;
 
 int main(void){
 string s, d;
 cin>>s>>d;
-transform(s.begin(), s.end()+1, s.begin(), ::toupper);
-transform(d.begin(), d.end()+1, d.begin(), ::toupper);
+transform(s.begin(), s.end(), s.begin(), ::toupper);
+transform(d.begin(), d.end(), d.begin(), ::toupper);
 // The transform() function in C++ sequentially applies an operation to the elements of an array(s) and then stores the result in another input array
 
 // 2 operations: Unary operation, Binary Operation
