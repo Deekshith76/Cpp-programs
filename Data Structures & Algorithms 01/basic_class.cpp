@@ -58,3 +58,30 @@ void printOut(IntCell& intObj) // passed by reference, so any change we make wil
     cout << intObj.read() << endl;
     // intObj.write(52);
 }
+
+// Line 3 illustrates the declaration of m. The * indicates that m is a pointer variable; it is allowed
+
+/*m is uninitialized at this point. In C++, no such check is performed to verify that m is
+assigned a value prior to being used (however, several vendors make products that do
+additional checks, including this one). The use of uninitialized pointers typically crashes
+programs, because they result in access of memory locations that do not exist. In general,
+it is a good idea to provide an initial value, either by combining lines 3 and 5, or by
+initializing m to the nullptr pointer
+
+int main(void)
+{
+    // IntCell *m;
+    IntCell *m = nullptr;
+    m = new IntCell {0};
+    m->write(5);
+    cout <<"Cell contents are: " << m->read() << endl;
+    delete m;
+    return 0;
+}
+
+Assignment and comparison of pointer variables in C++ is based on the value of the pointer,
+meaning the memory address that it stores. Thus two pointer variables are equal if they
+point at the same object. If they point at different objects, the pointer variables are not
+equal, even if the objects being pointed at are themselves equal. If lhs and rhs are pointer
+variables (of compatible types), then lhs=rhs makes lhs point at the same object that rhs
+points at */
