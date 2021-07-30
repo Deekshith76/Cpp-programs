@@ -6,17 +6,21 @@ using namespace std;
 class IntCell // IntCell is class type 
 {
     public: // can access any method by any class
-        IntCell() // Constructor 1, if no parameters are passed this will be initiated
-        {
-            storedValue = 0; //default value
-        }
+        // IntCell() // Constructor 1, if no parameters are passed this will be initiated
+        // {
+        //     storedValue = 0; //default value
+        // }
 
-        IntCell(int initialValue) // Constructor 2, if a parameter is passed with data type int, this will be initialized
-        {
-            storedValue = initialValue;
-        }
+        // IntCell(int initialValue) // Constructor 2, if a parameter is passed with data type int, this will be initialized
+        // {
+        //     storedValue = initialValue;
+        // }
 
-        int read() // returns the stored value
+        explicit IntCell(int initialValue = 0)
+            : storedValue {initialValue} {}
+
+        int read() const// returns the stored value
+        // if we add const keyword, meaning that it is not changeable after the object has been constructed
         {
             return storedValue;
         }
