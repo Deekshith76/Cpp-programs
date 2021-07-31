@@ -85,3 +85,57 @@ point at the same object. If they point at different objects, the pointer variab
 equal, even if the objects being pointed at are themselves equal. If lhs and rhs are pointer
 variables (of compatible types), then lhs=rhs makes lhs point at the same object that rhs
 points at */
+
+// Data member is a pointer, Default Big Five wont work, they has be to implemented in the class
+
+// class IntCell
+// {
+//     public:
+//         explicit IntCell(int initialValue = 0)  // Constructor
+//         {
+//             storedValue = new int { initialValue };
+//         }
+
+//         ~IntCell() // Deconstructor
+//         {
+//             delete storedValue;
+//         }
+
+//         IntCell (const IntCell & rhs) // Copy Constructor
+//         {
+//             storedValue = new int{*rhs.storedValue};
+//         }
+
+//         IntCell (IntCell && rhs): storedValue{rhs.storedValue} // Move constructor
+//         {
+//             rhs.storedValue = nullptr;
+//         }
+
+//         IntCell & operator= (const IntCell & rhs) // Copy Assignment Operator
+//         {
+//             if(this != &rhs)
+//             {
+//                 *storedValue = *rhs.storedValue;
+//                 return *this;
+//             }
+//         }
+
+//         IntCell & operator= (IntCell && rhs) // Move Assignement Operator
+//         {
+//             swap(storedValue, rhs.storedValue);
+//             return *this;
+//         }
+
+//         int read() const
+//         {
+//             return *storedValue;
+//         }
+
+//         void write(int x)
+//         {
+//             *storedValue = x;
+//         }
+
+//     private:
+//         int *storedValue;
+// };
