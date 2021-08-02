@@ -35,9 +35,9 @@ struct node* create()
     if(x == -1)
         return NULL;
     newNode-> data = x;
-    printf("Enter left child of %d: ", x);
+    printf("Left child of %d: ", x);
     newNode-> left = create();
-    printf("Enter right child of %d: ", x);
+    printf("Right child of %d: ", x);
     newNode-> right = create();
     return newNode;  
 }
