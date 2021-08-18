@@ -11,6 +11,7 @@ struct node* create();
 void preOrder(struct node* root);
 void inOrder(struct node* root);
 void postOrder(struct node* root);
+int getSumofNodes(struct node* root);
 
 int main(void)
 {
@@ -23,6 +24,7 @@ int main(void)
     inOrder(root);
     printf("\nPostOrder for given tree: ");
     postOrder(root);
+    printf("\nSum of all nodes in binary tree: %d", getSumofNodes(root));
 }
 
 struct node* create()
@@ -67,4 +69,11 @@ void postOrder(struct node* root)
     postOrder(root->left);
     postOrder(root->right);
     printf("%d ", root->data);
+}
+
+int getSumofNodes(struct node* root)
+{
+    if(root == NULL)
+        return 0;
+    return root->data + getSumofNodes(root->left) + getSumofNodes(root->right);
 }
